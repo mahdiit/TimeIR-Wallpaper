@@ -1,0 +1,147 @@
+*, td, table {
+    font-family: 'Vazirmatn'
+}
+
+html {
+    min-height: 100%;
+    width: 100%;
+    height: 100%;
+    direction: rtl;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    min-height: 100%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#time_ir {
+    border-collapse: collapse;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    direction: rtl;
+    text-align: center;
+    position: absolute;
+    bottom: 100px;
+}
+
+#timedate table {
+    border-collapse: collapse;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    direction: rtl;
+    text-align: center;
+}
+
+#time_ir td.time {
+    text-align: center;
+    width: 25%;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+#timedate table td {
+    text-align: center;
+    width: 25%;
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    padding: 5px;
+    margin-left: 15px;
+    border-left: 3px solid gray;
+}
+
+#cal {
+    width: 500px;
+    background-color: white;
+    opacity: 0.65;
+    direction: rtl;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.red-day {
+    color: darkred !important;
+}
+
+.dayList div > div.holiday {
+    color: red;
+}
+
+.dayList div.disabled > div {
+    background-color: silver;
+}
+
+.dayList div > div.holiday, .dayList div > div {
+    width: 80%;
+    text-align: center;
+}
+
+    .dayList div > div.clearBoth {
+        height: 0px;
+        padding: 0px;
+        margin: 0px;
+        display: block;
+    }
+
+    .dayList div > div.jalali {
+        width: 100%;
+    }
+
+    .dayList div > div.miladi, .dayList div > div.qamari {
+        width: 40%;
+    }
+
+.dayHeader {
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+    .dayHeader div {
+        width: 14.28%;
+        display: inline-block;
+        padding: 4px 0;
+        font-weight: bold;
+        background-color: gray;
+        text-align: center;
+    }
+
+.dayList div {
+    display: inline-block;
+}
+
+    .dayList div.jalali {
+        display: block;
+        font-weight: bold;
+    }
+
+    .dayList div.miladi {
+        font-size: 55%;
+        padding: 2px 3px 1px 0;
+    }
+
+    .dayList div.qamari {
+        font-size: 55%;
+        padding: 1px 0 3px 3px;
+    }
+
+    .dayList div.today > div {
+        border: 2px solid green;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+    }

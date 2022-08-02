@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="description" content="Webpage description goes here" />
+    <meta charset="utf-8">
+    <title>Video Player</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="">
+    <!--file:///C:\Users\m.yousefi\Desktop\demo\demo\demo\demo\content\css\style.css-->
+    <link rel="stylesheet" href="/content/Vazirmatn-font-face.css" />
+    <link rel="stylesheet" href="/content/css/style.css">
+</head>
+
+<body data-vide-bg="/content/video/video.mp4" data-vide-options="loop: true, muted: false, position: 0% 0%; posterType: 'jpg'">
+    <div id="cal"></div>
+    <table id="time_ir">
+        <tr>
+            <td class="time" id="today-shamsi">
+            </td>
+            <td class="time" id="today-gregorian">
+            </td>
+            <td class="time" id="today-hijri">
+            </td>
+            <td class="time" id="today-astrological">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4" id="timedate">
+                <marquee direction="right" loop="-1" width="100%">
+                    <table>
+                        <tr id="marquee_data"></tr>
+                    </table>
+                </marquee>
+            </td>
+        </tr>
+    </table>
+
+    <script src="/content/js/jquery-3.6.0.min.js"></script>
+    <script src="/content/js/jquery.vide.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('body').vide('/content/video/video.mp4');
+
+            $.get('https://www.time.ir/', function (data) {
+                var htmlText = $(data).find('.today-shamsi').html();
+                $('#today-shamsi').html(htmlText);
+                //today-gregorian
+                htmlText = $(data).find('.today-gregorian').html();
+                $('#today-gregorian').html(htmlText);
+                //today-hijri
+                htmlText = $(data).find('.today-hijri').html();
+                $('#today-hijri').html(htmlText);
+                //today-astrological
+                htmlText = $(data).find('.today-astrological').html();
+                $('#today-astrological').html(htmlText);
+
+                $(data).find('.eventsCurrentMonthWrapper ul li').each(function (i, el) {
+                    var eventHoliday = $(el).hasClass('eventHoliday');
+                    if (eventHoliday) {
+                        $('#marquee_data').append('<td class="red-day">' + el.innerHTML + '</td>');
+                    }
+                    else {
+                        $('#marquee_data').append('<td>' + el.innerHTML + '</td>');
+                    }                    
+                });
+
+                $('#cal').html($(data).find('.mainCalendar').html());
+            });
+        });
+    </script>
+</body>
+</html>
