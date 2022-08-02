@@ -2,7 +2,7 @@
 Simple Javascript code view Time.ir TV Wallpaper
 ![Untitled](https://user-images.githubusercontent.com/67848/182289080-840fdcab-9ce9-4711-9bb3-018bee26e380.jpg)
 
-نمایش تقویم برای تی وی و ولاپیپر
+نمایش تقویم برای تی وی و والپیپر
 بصورت لایو
 
 
